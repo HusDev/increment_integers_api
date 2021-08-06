@@ -33,10 +33,11 @@ def create_user(request, payload: UserCreateIn):
 def login(request, data: UserAuthDataIn):
     
     user = authenticate(username=data.username, password=data.password)
-    try:
-        User.objects.get(pk=user.pk)
-    except User.DoesNotExist:
+    print(user)
+    if user is None: 
         return 404, {'message': 'User does not exist.'}
+    else: 
+        User.objects.get(pk=user.pk)
 
     if user is not None:
         user.last_login = timezone.now()
