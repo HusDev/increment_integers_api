@@ -2,8 +2,8 @@ from ninja import Schema
 
 class SequenceOut(Schema):
     id: int
-    value: int
+    current: int
 
 
 class SequenceIn(Schema):
-    value: int
+    current: int
