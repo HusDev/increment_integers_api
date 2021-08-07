@@ -41,8 +41,10 @@ def next(request):
 
 #-------------------------------------------------------------------------  
 
-@count.put("/current", response={200: MessageOut})
+@count.put("/current", response={200: MessageOut, 400: MessageOut})
 def update(request, sequence: SequenceIn):
+    if sequence.current < 0: 
+        return 400, {"message": "Invalid input"}
     user = request.auth.get('user')
     last = Sequence.objects.filter(owner=user).last()
     last.current = sequence.current 
