@@ -3,6 +3,7 @@
 * [Technologies](#technologies)
 * [End-points](#end-points)
 * [Setup](#setup)
+* [Enviroment Variables](#enviroment-variables)
 ---
 
 ### General info
@@ -10,7 +11,7 @@ Sequence Integers API
 
 ### Technologies
 Project is created with:
-* [Python](https://svelte.dev/)
+* [Python](https://www.python.org/downloads/release/python-396)
 * [Django Ninja REST](https://django-ninja.rest-framework.com/)
 	
 ### End-points
@@ -46,3 +47,11 @@ To run this project, follow up these steps:
 5. Run the server
    - `python3 manage.py runserver`
 
+
+### Enviroment Variables:
+- Development environment
+   - ```ENV=development```
+
+- Production enviroment
+   - `ENV=production`
+   - `DATABASE_URL= your_postgres_database_url`
