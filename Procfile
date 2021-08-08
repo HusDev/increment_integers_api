@@ -1,1 +1,1 @@
-web: gunicorn counterapp.wsgi
+web: gunicorn increment_integers_api.wsgi
