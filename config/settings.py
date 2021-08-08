@@ -96,7 +96,7 @@ if env('ENV') == 'production':
     on_heroku = True
 
 if on_heroku: 
-    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600)
+    DATABASES = {'default': {dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600)}}  
 else: 
     DATABASES = {
         'default': {
